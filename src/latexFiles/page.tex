@@ -1,0 +1,24 @@
+\section{%%name%%}
+\label{%%ref%%}
+
+\begin{tcolorbox}[
+  blanker,
+  width=0.75\textwidth,enlarge left by=0.25\textwidth,
+  before skip=6pt,
+  breakable,
+  overlay unbroken and first={%
+    \node[inner sep=0pt,outer sep=0pt,text width=0.33\textwidth,
+      align=none,
+      below right]
+      at ([xshift=-0.25\textwidth]frame.north west)
+  {%
+    \dirtree{%
+      %%dirtree%%
+    }
+  };}]
+
+  \begin{lstlisting}[language={%%language%%}] 
+%%code%%
+\end{lstlisting}
+
+\end{tcolorbox}

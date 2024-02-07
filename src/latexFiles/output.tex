@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{dirtree}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage[latin1]{inputenc}
+
+\UseRawInputEncoding
+\geometry{a4paper, total={190mm,257mm}, left=10mm, top=20mm}
+\pagestyle{fancy}
+
+\definecolor{codebackground}{RGB}{255,255,255}
+\definecolor{codecomment}{RGB}{128,128,128}
+\definecolor{codekeyword}{RGB}{0,0,255}
+\definecolor{codestring}{RGB}{163,21,21}
+\definecolor{codeframe}{RGB}{211,211,211}
+\definecolor{codelinenumber}{RGB}{128,128,128}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{codebackground},   
+    commentstyle=\color{codecomment},
+    keywordstyle=\color{codekeyword},
+    numberstyle=\tiny\color{black!50},
+    stringstyle=\color{codestring},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,   
+	xleftmargin=10pt,                 
+	xrightmargin=10pt,                 
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+	rulecolor=\color{codeframe},
+	frame=single,
+	framesep=2pt,
+	literate={->}{\(\rightarrow\)}{2},
+	escapeinside={<@}{@>},
+	emph={[2] access,and,as, assert, break, class,continue, elif, if, else,
+		except,exec, failwith, finally,for,global,if,in,is,
+		lambda,with,not,or,pass,raise, try,while,rec,free,del},
+		emphstyle={[2]\color{orange}},
+	emph={[3] array, bool, char, float, int, list, option, string, unit, match,
+		mutable, datatype, Noeud, Hashtbl, Array, List, Some, None,when,},
+		emphstyle={[3]\color{codekeyword}},
+}
+\lstset{style=codestyle}
+
+\DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{2.2pt}
+
+\begin{document}
+
+\title{Document title}
+\maketitle
+
+\dirtree{%
+  %%globalTree%%
+}
+\newpage
+
+\DTsetlength{0.2em}{0.5em}{0.2em}{0.4pt}{1.6pt}
+%%documentContent%%
+\end{document}

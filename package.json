@@ -1,0 +1,20 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Ce script permet de convertir un repot en PDF",
+  "main": "index.js",
+  "scripts": {
+    "tex": "ts-node src/index.ts",
+    "pdf": "pdflatex -output-directory output output/index.tex",
+    "texpdf": "npm run tex && npm run pdf"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16"
+  }
+}
