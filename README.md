@@ -46,8 +46,7 @@ export const FILE_TAG: string = "fibzec-0vyhfi-zedJij"
 - Pour générer un fichier `.tex` à partir des fichiers:
 ```bash
 npm run tex
-```
-- Pour générer un fichier PDF à partir du fichier .tex généré:
+```- Pour générer un fichier PDF à partir du fichier .tex généré:
 ```bash
 npm run pdf
 ```
@@ -57,3 +56,6 @@ npm run texpdf
 ```
 
 Les fichiers (.tex et .pdf) seront dans le dossier `output`
+
+## Exemples
+Voic un premier [exemple](https://github.com/Faywynnn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
