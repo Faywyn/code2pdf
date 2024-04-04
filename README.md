@@ -12,7 +12,7 @@ fichier .pdf et une combinaison des deux.
 particulier `tcolorbox` et ses dépendances qui peuvent ne pas être installés par défaut)
 3. Clonez ce dépôt sur votre machine :
 ```bash
-git clone https://github.com/Faywynnn/code2pdf
+git clone https://github.com/Faywyn/code2pdf
 cd code2pdf
 npm install
 ```
@@ -59,4 +59,4 @@ npm run texpdf
 Les fichiers (.tex et .pdf) seront dans le dossier `output`
 
 ## Exemples
-Voic un premier [exemple](https://github.com/Faywynnn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
+Voic un premier [exemple](https://github.com/Faywyn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
