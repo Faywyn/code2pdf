@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twoside,a4paper]{article}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{dirtree}
@@ -7,12 +7,22 @@
 \usepackage{geometry}
 \usepackage{xcolor}
 \usepackage{listings}
-\usepackage[skins,breakable]{tcolorbox}
 \usepackage[latin1]{inputenc}
 
 \UseRawInputEncoding
-\geometry{a4paper, total={190mm,257mm}, left=10mm, top=20mm}
 \pagestyle{fancy}
+
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{-50pt}
+\setlength{\marginparwidth}{111pt}
+
+\setlength{\evensidemargin}{81pt}
+\setlength{\oddsidemargin}{-40pt}
+
+\setlength{\textwidth}{410pt}
+\setlength{\marginparsep}{10pt}
+
+\setlength{\textheight}{700pt}
 
 \definecolor{codebackground}{RGB}{255,255,255}
 \definecolor{codecomment}{RGB}{128,128,128}
@@ -58,15 +68,18 @@
 \DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{2.2pt}
 
 \begin{document}
-
+\newgeometry{margin=1in}
 \title{Document title}
 \maketitle
 
 \dirtree{%
   %%globalTree%%
 }
+\restoregeometry
 \newpage
+\leavevmode\thispagestyle{empty}\newpage
 
+\setcounter{page}{2}
 \DTsetlength{0.2em}{0.5em}{0.2em}{0.4pt}{1.6pt}
 %%documentContent%%
 \end{document}
