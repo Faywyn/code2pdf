@@ -16,15 +16,22 @@ function extLanguage(l: string): string {
 }
 
 /**
+ * Return valid latex text (like replace _ with \_)
+ */
+function texText(l: string): string {
+  return l.replaceAll("_", "\\_");
+}
+
+/**
  * Generate latex tree text
  * @param tree {Tree}
  * @param depth {number} need to be 0 first
  * @param displayLine {boolean}
  */
 export function generateLatexTree(tree: Tree, depth: number, displayLine: boolean): string {
-  let latexCode = `.${depth} ${tree.name} $ref$.\n`;
+  let latexCode = `.${depth} ${texText(tree.name)} $ref$.\n`;
   if (tree.isLast)
-    latexCode = latexCode.replace(tree.name, `\\textcolor{blue}{${tree.name}}`);
+    latexCode = latexCode.replace(tree.name, `\\textcolor{blue}{${texText(tree.name)}}`);
   if (!tree.name.endsWith("/") && displayLine)
     latexCode = latexCode.replace("$ref$", `\\DTcomment{\\pageref{${tree.abs.replace(/[^a-z]+/gi, '').slice(-20, -1)}}}`)
   latexCode = latexCode.replace("$ref$", "")
@@ -50,7 +57,7 @@ export function generateLatexPage(file: File): string {
   let pageContent: string = readFileSync("./src/latexFiles/page.tex", { encoding: "utf8" });
   pageContent = pageContent.replace("%%dirtree%%", latexTree);
   pageContent = pageContent.replace("%%code%%", file.content);
-  pageContent = pageContent.replace("%%name%%", file.name);
+  pageContent = pageContent.replace("%%name%%", texText(file.name));
   pageContent = pageContent.replace("%%language%%", extLanguage(file.extension.replace(".", "")))
   pageContent = pageContent.replace("%%ref%%", file.abs.replace(/[^a-z]+/gi, '').slice(-20, -1))
 

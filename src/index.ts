@@ -30,7 +30,7 @@ export function listFilesRecursively(directoryPath: string): string[] {
     }
   });
 
-  return files.map(x => x.replace(PROJECT_PATH, "").replaceAll("_", "\\_"))
+  return files.map(x => x.replace(PROJECT_PATH, ""))
 }
 
 /**
@@ -150,11 +150,11 @@ export function buildGlobalTree(path: string): Tree {
 export function sortTree(tree: Tree): Tree {
   let sortFolders = tree.subTree
     .filter(x => x.name.endsWith("/"))
-    .filter(x => !IGNORE_FOLDERS.includes(x.name.replace("/", "").replaceAll("\\_", "_")))
+    .filter(x => !IGNORE_FOLDERS.includes(x.name.replace("/", "")))
     .sort((a, b) => a.name.replace("/", "").localeCompare(b.name.replace("/", "")))
   let sortFiles = tree.subTree
     .filter(x => !x.name.endsWith("/"))
-    .filter(x => !IGNORE_FILES.includes(x.name.replaceAll("\\_", "_"))
+    .filter(x => !IGNORE_FILES.includes(x.name))
     .sort((a, b) => a.name.localeCompare(b.name))
 
   sortFiles.forEach(x => sortFolders.push(x))
