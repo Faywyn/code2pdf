@@ -41,7 +41,7 @@ export function listFilesRecursively(directoryPath: string): string[] {
  */
 export function buildTree(file: string, project: string): Tree {
   const fileStep: string[] = file.split("/").filter(x => x !== "");
-  const current = project.split("/").pop() || "" + "/"
+  const current = (project.split("/").pop() || "" + "/").replaceAll("_", "\\_");
 
   if (fileStep.length === 0) {
     return {
