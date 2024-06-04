@@ -30,7 +30,7 @@ export function listFilesRecursively(directoryPath: string): string[] {
     }
   });
 
-  return files.map(x => x.replace(PROJECT_PATH, ""))
+  return files.map(x => x.replace(PROJECT_PATH, "").replaceAll("_", "\\_"))
 }
 
 /**
@@ -41,7 +41,7 @@ export function listFilesRecursively(directoryPath: string): string[] {
  */
 export function buildTree(file: string, project: string): Tree {
   const fileStep: string[] = file.split("/").filter(x => x !== "");
-  const current = (project.split("/").pop() || "" + "/").replaceAll("_", "\\_");
+  const current = project.split("/").pop() || "" + "/";
 
   if (fileStep.length === 0) {
     return {
