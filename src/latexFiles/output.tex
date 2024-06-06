@@ -1,4 +1,7 @@
 \documentclass[twoside,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{dirtree}
@@ -6,10 +9,8 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{xcolor}
-\usepackage{listings}
-\usepackage[latin1]{inputenc}
+\usepackage{listingsutf8}
 
-\UseRawInputEncoding
 \pagestyle{fancy}
 
 \setlength{\hoffset}{0pt}
@@ -63,7 +64,28 @@
 		mutable, datatype, Noeud, Hashtbl, Array, List, Some, None,when,},
 		emphstyle={[3]\color{codekeyword}},
 }
-\lstset{style=codestyle}
+
+\lstset{inputencoding=utf8/latin1, style=codestyle,
+% Table de correspondance entre les caractères spéciaux et leurs équivalent dans les blocs listing
+literate=%
+	{é}{{\'e}}{1}%
+	{è}{{\`e}}{1}%
+	{à}{{\`a}}{1}%
+	{ç}{{\c{c}}}{1}%
+	{œ}{{\oe}}{1}%
+	{ù}{{\`u}}{1}%
+	{É}{{\'E}}{1}%
+	{È}{{\`E}}{1}%
+	{À}{{\`A}}{1}%
+	{Ç}{{\c{C}}}{1}%
+	{Œ}{{\OE}}{1}%
+	{Ê}{{\^E}}{1}%
+	{ê}{{\^e}}{1}%
+	{î}{{\^i}}{1}%
+	{ô}{{\^o}}{1}%
+	{û}{{\^u}}{1}%
+	{≠}{{=/=}}{1}%
+}
 
 \DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{2.2pt}
 
