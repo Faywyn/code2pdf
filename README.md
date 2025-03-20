@@ -1,16 +1,13 @@
-# Convertisseur code en PDF via LaTeX
+# Code to PDF Converter via LaTeX
 
-Ce projet propose un outil écrit en TypeScript pour convertir un dossier contenant
-plusieurs fichiers de code en un document PDF en passant par LaTeX. Il offre trois
-commandes npm pour différentes actions : la génération de fichier .tex, la génération de
-fichier .pdf et une combinaison des deux.
+This project offers a tool written in TypeScript to convert a folder containing several code files into a PDF document via LaTeX.
+It provides three npm commands for different actions: generating a .tex file, generating a .pdf file, and a combination of both.
 
 ## Installation
 
-1. Assurez-vous d'avoir Node.js installé sur votre système.
-2. Assurez-vous de posséder les librairies LaTex nécessaire (en
-particulier `tcolorbox` et ses dépendances qui peuvent ne pas être installés par défaut)
-3. Clonez ce dépôt sur votre machine :
+1. Make sure Node.js is installed on your system.
+2. Ensure that you have the necessary LaTeX libraries installed (in particular, tcolorbox and its dependencies, which might not be installed by default).
+3. Clone this repository to your machine :
 ```bash
 git clone https://github.com/Faywyn/code2pdf
 cd code2pdf
@@ -19,7 +16,7 @@ npm install
 
 ## Configuration
 
-Paramètre modificables (`config.ts`)
+Modifiable settings (`config.ts`)
 ```TS
 export const PROJECT_PATH: string = "path/to/project";   // Better if absolut
 
@@ -43,20 +40,20 @@ export const FILE_TAG: string = "fibzec-0vyhfi-zedJij"
 
 ## Utilisation
 
-- Pour générer un fichier `.tex` à partir des fichiers:
+- To generate a `.tex` file from the code files :
 ```bash
 npm run tex
 ```
-- Pour générer un fichier PDF à partir du fichier .tex généré:
+- To generate a PDF file from the generated `.tex` file :
 ```bash
 npm run pdf
 ```
-- Pour faire les deux à la fois:
+- To do both at once:
 ```bash
 npm run texpdf
 ```
 
-Les fichiers (.tex et .pdf) seront dans le dossier `output`
+The files (.tex and .pdf) will be in the output folder.
 
 ## Exemples
-Voic un premier [exemple](https://github.com/Faywyn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
+Here’s an [example](https://github.com/Faywyn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
