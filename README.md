@@ -38,7 +38,7 @@ export const FILE_TAG: string = "fibzec-0vyhfi-zedJij"
 // To edit file format (title, descr, ...), edit tex files in latexFiles/ folder
 ```
 
-## Utilisation
+## Usage
 
 - To generate a `.tex` file from the code files :
 ```bash
@@ -55,5 +55,5 @@ npm run texpdf
 
 The files (.tex and .pdf) will be in the output folder.
 
-## Exemples
+## Examples
 Here’s an [example](https://github.com/Faywyn/code2pdf/blob/main/exemples/Faywynnn.nvim.lua.pdf)
